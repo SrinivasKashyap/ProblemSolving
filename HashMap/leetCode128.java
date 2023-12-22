@@ -21,5 +21,33 @@ public class leetCode128 {
         }
         if (len > max) max = len;
         return max;
+
+        /*
+         * Using Hashing and O(n)
+         *         Set<Integer> lookup = new HashSet<Integer>();
+        int n = nums.length;
+        if (n==0) return 0;
+
+        for (int i=0; i<n; i++) {
+            lookup.add(nums[i]);
+        }
+
+        int max = 0;
+
+        for (int i=0; i<n; i++) {
+            if (lookup.contains(nums[i] - 1)) continue;
+            else {
+                int num = nums[i];
+                int len = 0;
+                while (lookup.contains(num)) {
+                    len++;
+                    num = num + 1;
+                }
+                if (len > max) max = len;
+            }
+        }
+
+        return max;
+         */
     }
 }
